@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="myForm">
+            <input type="text" class="name">
+            <input type="text" class="lastName">
+            <button type="button" id="myButton">Send</button>
+    </form>
+    <br>
+    <table id="maintable">
+        <thead>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {{range $val := .users}}
+            <tr data-id="{{ .ID }}">
+                <td>{{ .Name }}</td>
+                <td>{{ .LastName }}</td>
+                <td><button class="remove">X</button></td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    <script src="../files/js/main.js"></script>
+</body>
+</html>
+
